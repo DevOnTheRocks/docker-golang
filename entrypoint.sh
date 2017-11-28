@@ -3,10 +3,6 @@ sleep 5
 
 cd /home/container
 
-wget https://redirector.gvt1.com/edgedl/go/go${VERSION}.${OS}-${ARCH}.tar.gz
-tar -C /usr/local -xzf go${VERSION}.${OS}-${ARCH}.tar.gz
-rm go${VERSION}.${OS}-${ARCH}.tar.gz
-
 # Replace Startup Variables
 MODIFIED_STARTUP=`eval echo $(echo ${STARTUP} | sed -e 's/{{/${/g' -e 's/}}/}/g')`
 echo ":/home/container$ ${MODIFIED_STARTUP}"
